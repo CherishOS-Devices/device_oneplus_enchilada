@@ -37,7 +37,7 @@ CHERISH_BUILD_TYPE:= OFFICIAL
 
 # Maintainer
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cherish.maintainer=Zahidm
+    ro.cherish.maintainer=ZahidM_Choudhry
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := cherish_enchilada
