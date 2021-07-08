@@ -25,5 +25,5 @@ Copyright 2018 - The LineageOS Project.
 ```
 # Compiling
 lunch cherish_enchilada-userdebug (this will auto pull all dependencies)
-brunch enchilada
+brunch enchilada | tee log.txt
 ```
