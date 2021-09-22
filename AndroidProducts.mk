@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/palladium_enchilada.mk
+    $(LOCAL_DIR)/cherish_enchilada.mk
 
 COMMON_LUNCH_CHOICES := \
-    palladium_enchilada-user \
-    palladium_enchilada-userdebug \
-    palladium_enchilada-eng
+    cherish_enchilada-user \
+    cherish_enchilada-userdebug \
+    cherish_enchilada-eng

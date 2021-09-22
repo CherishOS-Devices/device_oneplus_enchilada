@@ -22,35 +22,27 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oneplus/enchilada/device.mk)
 
 # Inherit some common Palladium stuff.
-$(call inherit-product, vendor/palladium/config/common_full_phone.mk)
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 # Boot Animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
-# Gapps
-ifeq ($(with_gapps), yes)
-PALLADIUM_BUILD_VARIANT := GAPPS
-TARGET_GAPPS_ARCH := arm64
-TARGET_INCLUDE_STOCK_ARCORE := true
-TARGET_SUPPORTS_GOOGLE_RECORDER := false
-endif
-
 TARGET_INCLUDE_WIFI_EXT := true
 
-# Palladium Official
-PALLADIUM_BUILD_TYPE := OFFICIAL
+# Gapps
+TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_WIFI_EXT := true
+WITH_GMS := true
 
-# Maintainer & Device Props
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.palladiumdevice.maintainer=ZahidM_choudhry \
-    ro.palladiumdevice.cpu=SDM845\
-    ro.palladiumdevice.display=6.28 \
-    ro.palladiumdevice.displaytype=Optic.AMOLED \
-    ro.palladiumdevice.battery=3300mAh \
-    ro.palladiumdevice.camera=16MP+20MP
+# Official
+CHERISH_BUILD_TYPE := OFFICIAL
+
+# Maintainer
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.cherish.maintainer=ZahidM_Choudhry
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := palladium_enchilada
+PRODUCT_NAME := cherish_enchilada
 PRODUCT_DEVICE := enchilada
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
@@ -60,7 +52,4 @@ PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE=OnePlus6 \
-    PRODUCT_NAME=OnePlus6 \
-    PRIVATE_BUILD_DESC="coral-user 11 RQ3A.210805.001.A1 7474174 release-keys"
-
-BUILD_FINGERPRINT := google/coral/coral:11/RQ3A.210805.001.A1/7474174:user/release-keys
+    PRODUCT_NAME=OnePlus6
